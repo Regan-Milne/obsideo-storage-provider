@@ -1,0 +1,21 @@
+# Obsideo storage provider configuration.
+# Copy to config.yaml and edit before running.
+# All values shown are defaults — omit any field to accept the default.
+
+provider_id: "my-provider-1"   # Human-readable label. Not used for auth.
+
+server:
+  host: "0.0.0.0"              # Listen address. Use "127.0.0.1" for local-only.
+  port: 3334                   # HTTP port. Put a TLS-terminating reverse proxy in front for HTTPS.
+  read_timeout: 30             # Seconds.
+  write_timeout: 300           # Seconds. Set higher if you serve very large files.
+
+data:
+  path: "./data"               # Storage root. Use an absolute path in production.
+                               # Subdirectories objects/ and index/ are created automatically.
+
+tokens:
+  public_key_path: "coordinator_pub.pem"
+  # Ed25519 public key of the coordinator that will issue your upload/download tokens.
+  # Copy from coordinator/data/coordinator.pub after the coordinator first starts.
+  # The provider refuses to start if this file is missing or malformed.

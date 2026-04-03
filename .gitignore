@@ -1,0 +1,27 @@
+# Build output
+obsideo-storage-provider
+obsideo-storage-provider.exe
+/provider
+/provider.exe
+
+# Runtime data — never commit
+data/
+
+# Key material — never commit
+*.key
+coordinator_pub.pem
+coordinator.pub
+
+# Local config override — never commit
+config.yaml
+
+# Logs
+*.log
+
+# Go test artifacts
+*.test
+*.out
+
+# OS
+.DS_Store
+Thumbs.db
