@@ -58,7 +58,18 @@ That's it. Your provider is running. Next: [register it with the coordinator](OP
 
 ## Running as a Service (systemd)
 
-For production, it is recommended to run the provider as a systemd service using the provided `obsideo-provider.service` file.
+For production, it is recommended to run the provider as a systemd service. You can use the provided deployment script to automate the setup or follow the manual steps.
+
+### Automatic Deployment
+
+1. **Configure:**
+   Ensure `config.yaml` is configured and `coordinator_pub.pem` is present in the current directory.
+2. **Run the script:**
+   ```bash
+   sudo bash deploy.sh
+   ```
+
+### Manual Setup
 
 1. **Build and install:**
    ```bash
