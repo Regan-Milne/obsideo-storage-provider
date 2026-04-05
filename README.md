@@ -56,6 +56,46 @@ That's it. Your provider is running. Next: [register it with the coordinator](OP
 
 ---
 
+## Running as a Service (systemd)
+
+For production, it is recommended to run the provider as a systemd service. You can use the provided deployment script to automate the setup or follow the manual steps.
+
+### Automatic Deployment
+
+1. **Configure:**
+   Ensure `config.yaml` is configured and `coordinator_pub.pem` is present in the current directory.
+2. **Run the script:**
+   ```bash
+   sudo bash deploy.sh
+   ```
+
+### Manual Setup
+
+1. **Build and install:**
+   ```bash
+   go build -o provider .
+   sudo useradd -r -s /sbin/nologin obsideo
+   sudo install -d -o obsideo /opt/obsideo-provider
+   sudo cp provider config.yaml coordinator_pub.pem /opt/obsideo-provider/
+   sudo chown -R obsideo:obsideo /opt/obsideo-provider
+   ```
+
+2. **Setup systemd:**
+   ```bash
+   sudo cp obsideo-provider.service /etc/systemd/system/
+   sudo systemctl daemon-reload
+   sudo systemctl enable obsideo-provider
+   sudo systemctl start obsideo-provider
+   ```
+
+3. **Check status:**
+   ```bash
+   systemctl status obsideo-provider
+   journalctl -u obsideo-provider -f
+   ```
+
+---
+
 ## Endpoints
 
 | Method | Path | Description |

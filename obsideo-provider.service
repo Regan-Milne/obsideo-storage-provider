@@ -1,0 +1,16 @@
+[Unit]
+Description=Obsideo storage provider
+After=network.target
+
+[Service]
+Type=simple
+User=obsideo
+WorkingDirectory=/opt/obsideo-provider
+ExecStart=/opt/obsideo-provider/provider start --config config.yaml
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
