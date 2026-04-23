@@ -1,3 +1,19 @@
+# Repository archived: use `obsideo-provider` instead
+
+**This repository has been archived.** The canonical Obsideo storage provider repo is now:
+
+### [github.com/Regan-Milne/obsideo-provider](https://github.com/Regan-Milne/obsideo-provider)
+
+All active development, releases, and operator documentation live there. This repo is preserved read-only for historical reference.
+
+**If you are an operator:** follow the release notes on the canonical repo. The current active release is [v2-2026-04-23-retention-auth](https://github.com/Regan-Milne/obsideo-provider/releases).
+
+**If you linked here from somewhere else:** please update your link to point at `obsideo-provider`. This archive exists to preserve git history for anyone who followed a stale reference.
+
+---
+
+## Historical README (preserved below)
+
 # Obsideo Storage Provider
 
 > **Alpha / experimental.** This software is under active development. See [Limitations](#limitations) before running in production.
